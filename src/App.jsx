@@ -1,12 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// import { useState } from 'react'
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+import { v4 as uuid } from 'uuid';
+import hexData from './assets/hexdata'
+// import './App.css'
+import Row from './components/Row'
 
 function App() {
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
+  const boardRows = hexData.map((row) => <Row key={uuid()} rowArray={row} />)
 
   return (
+      <main>
+        {boardRows}
+      </main>
+  )
+}
+
+export default App
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
     <>
       <div>
         <a href="https://vite.dev" target="_blank">
@@ -29,7 +56,4 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
     </>
-  )
-}
-
-export default App
+*/
