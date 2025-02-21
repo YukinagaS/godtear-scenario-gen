@@ -24,12 +24,12 @@ body {
 
 button {
   border-radius: 8px;
+  font-size: 0.6rem;
   border: 1px solid transparent;
-  height: 100px;
-  width: 100px;
-  margin: 10px;
+  height: 50px;
+  width: 50px;
+  margin: 3px;
   /* padding: 2rem 2rem; */
-  font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   background-color: #1a1a1a;
@@ -45,4 +45,8 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+.btn-active {
+  background-color: #646cff;
 }
