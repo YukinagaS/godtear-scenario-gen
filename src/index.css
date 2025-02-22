@@ -75,6 +75,10 @@ button {
   clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
 }
 
+.hex-board-center {
+  background-color: #200e53;
+}
+
 button:hover {
   background-color: #171a5c;
 }
