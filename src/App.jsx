@@ -11,10 +11,15 @@ function App() {
   const boardRows = hexData.map((row, i) => <Row key={uuid()} rowId={i} rowArray={row} />)
 
   function copyCoordinates() {
-    let returnArray = []
+    let copyArray = []
     const allActive = document.querySelectorAll(".btn-active");
-    allActive.forEach((x) => returnArray.push(x.getAttribute("data-hex")));
-    console.log(returnArray);
+    allActive.forEach((x) => copyArray.push(`{${x.getAttribute("data-hex")}}`));
+    // const copyArray = allActive.map((x) => `{${x.getAttribute("data-hex")}}`)
+    console.log(copyArray);
+
+    navigator.clipboard.writeText(copyArray);
+
+    alert("Copied selection to clipboard!");
   }
 
   function clearSelection() {
