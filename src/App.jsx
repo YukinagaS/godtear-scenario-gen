@@ -8,25 +8,32 @@ import Row from './components/Row'
 
 function App() {
   // const [count, setCount] = useState(0)
-  const boardRows = hexData.map((row) => <Row key={uuid()} rowArray={row} />)
+  const boardRows = hexData.map((row, i) => <Row key={uuid()} rowId={i} rowArray={row} />)
 
-  function collectCoordinates() {
+  function copyCoordinates() {
     let returnArray = []
     const allActive = document.querySelectorAll(".btn-active");
     allActive.forEach((x) => returnArray.push(x.getAttribute("data-hex")));
     console.log(returnArray);
   }
 
-  function clearActive() {
+  function clearSelection() {
     const allActive = document.querySelectorAll(".btn-active");
     allActive.forEach((element) => element.classList.remove("btn-active"));
   }
 
   return (
       <main>
+        <header>
+          <h1>Custom Scenario Generator</h1>
+        </header>
+
         {boardRows}
-        <button onClick={collectCoordinates}>Generate Array</button>
-        <button onClick={clearActive}>Clear Selections</button>
+
+        <div className="button-tray">
+          <button className="btn-control" onClick={copyCoordinates}>Copy Coordinates</button>
+          <button className="btn-control" onClick={clearSelection}>Clear Selection</button>
+        </div>
       </main>
   )
 }
