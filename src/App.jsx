@@ -30,7 +30,7 @@ function App() {
   return (
       <main>
         <header>
-          <h1>Custom Scenario Generator Test</h1>
+          <h1>Custom Scenario Generator</h1>
         </header>
 
         {boardRows}
